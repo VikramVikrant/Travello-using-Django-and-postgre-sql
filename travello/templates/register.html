@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Registeration
+    </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/register.css' %}">
+
+    
+    
+
+</head>
+
+<body >
+    <div class="background_image" >
+        <div class="box" >
+            <h1 >Sign Up</h1>
+            <form action="register" method="POST">
+                {% csrf_token %}
+                <input type="text" name="first_name" placeholder="First Name" style="margin-bottom: 10px;"><br>
+                <input type="text" name="last_name" placeholder="Last Name" style="margin-bottom: 10px;"><br>
+                <input type="text" name="username" placeholder="Username" style="margin-bottom: 10px;"><br>
+                <input type="email" name="email" placeholder="Email"  style="margin-bottom: 10px;"><br>
+                <input type="password" name="password1" placeholder="Password"  style="margin-bottom: 10px;"><br>
+                <input type="password" name="password2" placeholder="Confirm Password"  style="margin-bottom: 10px;"><br>
+                <input type="submit">
+            </form>
+        </div>
+
+        <div>
+            {% for message in messages %}
+            <h3>{{message}}</h3>
+            {% endfor %}
+        </div>
+        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+        <script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+        <script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+        <script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+        <script src="{% static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
+        <script src="{% static 'plugins/easing/easing.js' %}"></script>
+        <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+    </div>
+</body>
+
+</html>
